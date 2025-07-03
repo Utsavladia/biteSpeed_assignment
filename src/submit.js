@@ -12,7 +12,22 @@ const selector = (state) => ({
 export const SubmitButton = () => {
     const { nodes, edges } = useStore(selector, shallow);
 
-    const handleSubmit = async () => {
+    const handleSave = async () => {
+        // Validation: More than one node, and more than one node has zero target handles
+        if (nodes.length > 1) {
+            // For each node, count target handles
+            const nodesWithNoTargetHandles = nodes.filter(node => {
+                // Handles are usually in node.handles or node.data.handles
+                const handles = node.handles || (node.data && node.data.handles) || [];
+                // If handles are not present, try to infer from type (fallback: assume 0)
+                const targetHandles = handles.filter(h => h.type === 'target');
+                return targetHandles.length === 0;
+            });
+            if (nodesWithNoTargetHandles.length > 1) {
+                alert('Error: More than one node has empty target handles. Please ensure only one node has no incoming connections.');
+                return;
+            }
+        }
         try {
             const response = await fetch('http://localhost:8000/pipelines/parse', {
                 method: 'POST',
@@ -29,10 +44,7 @@ export const SubmitButton = () => {
             const result = await response.json();
 
             const dagMessage = result.is_dag ? 'The pipeline is a valid DAG.' : 'The pipeline has cycles and is not a valid DAG.';
-            const alertMessage = `Pipeline Submission Analysis:
-- Number of Nodes: ${result.num_nodes}
-- Number of Edges: ${result.num_edges}
-- ${dagMessage}`;
+            const alertMessage = `Pipeline Submission Analysis:\n- Number of Nodes: ${result.num_nodes}\n- Number of Edges: ${result.num_edges}\n- ${dagMessage}`;
 
             alert(alertMessage);
 
@@ -43,6 +55,6 @@ export const SubmitButton = () => {
     };
 
     return (
-        <button type="button" className={styles.ctaButton} onClick={handleSubmit}>Submit</button>
+        <button type="button" className={styles.ctaButton} onClick={handleSave}>Save ✨</button>
     );
 }
