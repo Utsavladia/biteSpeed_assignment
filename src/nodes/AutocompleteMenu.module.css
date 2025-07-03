@@ -1,0 +1,23 @@
+/* AutocompleteMenu.module.css */
+.menu {
+    position: absolute;
+    background-color: #2d1856;
+    border: 1px solid #6c47ff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-height: 150px;
+    overflow-y: auto;
+    color: white;
+    width: 200px;
+}
+
+.item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.item:hover {
+    background-color: #3a1c71;
+}

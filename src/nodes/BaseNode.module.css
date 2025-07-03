@@ -1,0 +1,111 @@
+.nodeContainer {
+    width: 240px;
+    min-height: 100px;
+    background: linear-gradient(180deg, rgba(17, 5, 46, 0.8) 0%, rgba(11, 4, 28, 0.8) 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px 0 rgba(68, 31, 138, 0.352);
+    border: 1px solid rgb(61, 10, 143);
+    color: #fff;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+}
+
+.nodeTitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    background: rgb(61, 10, 143);
+    color: rgb(198, 198, 198);
+    padding: 14px 0 10px 18px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+}
+
+.nodeFields {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 12px 12px 12px;
+}
+
+.fileRow {
+    background: rgba(34, 6, 106, 0.7);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    padding: 10px 16px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.uploadBtn {
+    background: rgba(34, 6, 106, 0.7);
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    margin-bottom: 0;
+    cursor: pointer;
+    margin-top: 0;
+    transition: background 0.2s;
+}
+
+.uploadBtn:hover {
+    background: #5e2ecf;
+}
+
+.nodeField label {
+    color: #fff;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nodeField input,
+.nodeField select {
+    background: rgb(61, 10, 143);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 8px;
+    margin-top: 2px;
+    outline: none;
+}
+
+.nodeField input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #6c47ff;
+}
+
+.nodeTextarea {
+    background: rgb(61, 10, 143);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-top: 4px;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+    font-family: inherit;
+    font-size: 0.95rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+img {
+    border-radius: 8px;
+    margin-top: 6px;
+    box-shadow: 0 2px 8px 0 rgba(58, 28, 113, 0.15);
+}

@@ -1,0 +1,64 @@
+.appFlexRoot {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: flex-between;
+    gap: 10px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.pipelineLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%;
+    width: 80%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.pipelineRight {
+    width: 20%;
+    height: 100%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+
+.toolbarTop {
+    background-color: rgba(25, 3, 46, 0.564);
+    width: 100%;
+    max-height: 75vh;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    backdrop-filter: blur(50px);
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    border: 1.5px solid rgba(118, 84, 255, 0.329);
+}
+
+.buttonBottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Make toolbar contents column */
+.toolbarNodes {
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 10px !important;
+}
